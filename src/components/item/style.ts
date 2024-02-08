@@ -5,7 +5,8 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
 
-width: 350px;
+width: 250px;
+
 
 p{
     margin: 6px 0px;
@@ -20,7 +21,7 @@ p{
 export const ContaineritemPrices = styled.div`
 
 display: flex;
-gap: 20px;
+flex-direction: column;
 
 
 `

@@ -1,5 +1,4 @@
 
-
 import styled from "@emotion/styled";
 
 
@@ -25,7 +24,7 @@ hr{
 
 `
 
-export const ContainerItem = styled.div`
+export const ContainerColletions = styled.div`
 
 display: flex;
 margin-top: 50px;

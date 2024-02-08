@@ -2,6 +2,7 @@
 
 import React from 'react'
 import * as S from './style'
+import Image from 'next/image'
 
 const Hero = () => {
   return (
@@ -11,14 +12,14 @@ const Hero = () => {
         <div>
             <div className='handIcon'>
                 <p>new</p>
-                <h1>icon</h1>
+                <Image src='/' width={100} height={100} alt=''/>
             </div>
             <p>colletion</p>
             <p>for everyone</p>
         </div>
         <div className='heroLatest'>
             <div>latest coletion</div>
-            <h1>picture</h1>
+            <Image src='/' width={100} height={100} alt=''/>
         </div>
       </S.ContainerLeft>
       <S.ContainerRight>
