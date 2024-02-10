@@ -3,6 +3,7 @@ import { createContext, useState, useEffect, ReactNode } from "react";
 type ItemType = {
   title: string;
   price: number;
+  order_backend: number
 };
 
 type ShopContextType = {

@@ -1,8 +1,7 @@
-// Navbar component
-
 import Link from 'next/link';
 import * as S from './style';
 import React, { ReactNode, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import ShopCategory from '@/pages/shopcategory/ShopCategory';
 import Men from '../../../public/men.png';
@@ -12,6 +11,7 @@ import Image from 'next/image';
 
 const Navbar = () => {
   const [selectMenu, setSelectMenu] = useState<string | undefined>(undefined);
+  const router = useRouter();
 
   return (
     <S.Container>
@@ -20,7 +20,6 @@ const Navbar = () => {
         <p>Ecommerce</p>
       </S.ContainerLogo>
       <S.ContainerMenu>
-
         <Link href='/shop/Shop'>
           <li onClick={() => setSelectMenu('Shop')}>
             Shop{selectMenu === 'Shop' ? <hr /> : <></>}
@@ -32,16 +31,22 @@ const Navbar = () => {
             Man{selectMenu === 'Man' ? <hr /> : <></>}
           </li>
         </Link>
-        
+
         <Link href={{ pathname: '/shopcategory/ShopCategory', query: { banner: Women.src } }}>
           <li onClick={() => setSelectMenu('Women')}>
             Women{selectMenu === 'Women' ? <hr /> : <></>}
           </li>
         </Link>
-        
+
+        <li onClick={() => router.push('/product/ProductId')}>
+          {selectMenu === 'ProductId' ? <hr /> : <></>}
+        </li>
+
       </S.ContainerMenu>
       <S.ContainerLoginCar>
-        <Link href={{ pathname: '/login/Login'}}><button>Login</button></Link>
+        <Link href='/login/Login'>
+          <button>Login</button>
+        </Link>
         <h1>icon car</h1>
         <div className="carCount">0</div>
       </S.ContainerLoginCar>
