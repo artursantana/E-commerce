@@ -7,7 +7,7 @@ interface Props {
     product: string | undefined
 }
 
-const BreadCrum = ({product}: Props) => {
+const BreadCrum = () => {
    
   return (
     <S.Container>

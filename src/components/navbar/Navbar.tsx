@@ -38,9 +38,15 @@ const Navbar = () => {
           </li>
         </Link>
 
-        <li onClick={() => router.push('/product/ProductId')}>
-          {selectMenu === 'ProductId' ? <hr /> : <></>}
+        <Link href={{ pathname: '/product/Product'}}>
+        <li onClick={() => setSelectMenu('Product')}>
+          Product{selectMenu === 'Product' ? <hr /> : <></>}
         </li>
+      </Link>
+
+      { /* <li onClick={() => router.push('/product/ProductId/:')}>
+        product{selectMenu === 'product' ? <hr /> : <></>}
+        </li>*/}
 
       </S.ContainerMenu>
       <S.ContainerLoginCar>

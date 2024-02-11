@@ -4,17 +4,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface ItemProps {
-  img?: string | undefined
+  img?: string | undefined;
   price: number;
-  thumbnail?: any;
+  thumbnail:string
 }
 
-const Item: React.FC<ItemProps> = ({  img, price }) => {
-  
+const Item: React.FC<ItemProps> = ({ img, price }) => {
   return (
     <S.Container>
       <S.ContaineritemPrices>
-     {img &&<Link href='/product/Product'> <Image src={img} width={100} height={100} alt="" /></Link>}
+        {img && (
+          <Link href={{ pathname: '/product/Product', query: { price } }}>
+            <Image src={img} width={100} height={100} alt="" />
+          </Link>
+        )}
         <S.ContainerNewPrice>R$ {price}</S.ContainerNewPrice>
         <S.ContainerPriceOld>valor em dolar</S.ContainerPriceOld>
       </S.ContaineritemPrices>

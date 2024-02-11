@@ -2,30 +2,23 @@ import { ShopContext } from '@/context/ShopContext';
 import { useContext } from 'react';
 import * as S from './style';
 import BreadCrum from '@/components/breadcrum/BreadCrum';
-import { useRouter } from 'next/router';
 import ProductDisplay from '@/components/productdisplay/ProductDisplay';
+import { useRouter } from 'next/router';
 
 const Product: React.FC = () => {
-
   const { data } = useContext(ShopContext)!;
-
   const router = useRouter();
-  const searchValue = router;
-  console.log('router : ',searchValue)
 
-  
-  const product = data.find((e) => {
-    return e.price === Number(searchValue);
-    
-  });
-  console.log('product : ',product)
-
+  const { price } = router.query;
+  const parsedPrice = Array.isArray(price) ? price[0] : price;
+  const product = data.find((e) => e.price === parseFloat(parsedPrice));
 
   return (
     <S.Container>
       <div>
-        <BreadCrum product={product?.title} />
-        <ProductDisplay product={product}/>
+
+        <BreadCrum />
+        <ProductDisplay product={product} />
       </div>
     </S.Container>
   );
