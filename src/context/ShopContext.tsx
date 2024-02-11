@@ -8,6 +8,9 @@ type ItemType = {
 
 type ShopContextType = {
   data: ItemType[];
+  cartItems: Record<number, number>;
+  addToCart: (itemId: number) => void;
+  removeFromCart: (itemId: number) => void;
 };
 
 type ShopContextProviderProps = {
@@ -17,7 +20,9 @@ type ShopContextProviderProps = {
 export const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
+ 
   const [data, setData] = useState<ItemType[]>([]);
+  
 
   useEffect(() => {
     fetch('https://api.mercadolibre.com/sites/MLB/search?q=celular')
@@ -33,7 +38,32 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
       });
   }, []);
 
-  const contextValue: ShopContextType = { data };
+
+  
+  
+const getDefaultCart = () => {
+  const cart: Record<number, number> = {}
+  for (let index = 0; index < data.length; index++) {
+    cart[index] = 0
+  }
+  return cart;
+}
+
+const addToCart = (itemId: number) => {
+  setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+  
+}
+
+const removeFromCart = (itemId: number) => {
+  setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+}
+const [cartItems,setCartItems] = useState<Record<number, number>>(getDefaultCart())
+
+
+  
+const contextValue: ShopContextType = { data, cartItems,addToCart,removeFromCart };
+
+console.log(cartItems)
 
   return <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>;
 };
