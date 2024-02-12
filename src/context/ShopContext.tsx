@@ -1,3 +1,6 @@
+
+
+
 import { createContext, useState, useEffect, ReactNode } from "react";
 
 type ItemType = {
@@ -63,9 +66,9 @@ const [cartItems,setCartItems] = useState<Record<number, number>>(getDefaultCart
   
 const contextValue: ShopContextType = { data, cartItems,addToCart,removeFromCart };
 
-console.log(cartItems)
 
   return <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>;
 };
 
-export default ShopContextProvider;
+export default ShopContextProvider; 
+
