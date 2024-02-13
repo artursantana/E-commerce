@@ -1,67 +1,40 @@
+// CartItems.tsx
+import React, { useContext } from 'react';
+import Image from 'next/image';
+import { ShopContext } from '@/context/ShopContext';
 
-
-
-
-
-import { ShopContext } from '@/context/ShopContext'
-import React, { useContext } from 'react'
-import * as S from './style'
-import Image from 'next/image'
-
-
-interface ProductProps {
-  thumbnail: string;
-  name: string;
-  price: number;
-  
-}
 
 const CartItems: React.FC = () => {
-
-  const {data, cartItems ,removeFromCart} = useContext(ShopContext)
+  const context = useContext(ShopContext);
+  if(!context){
+    return <div>carregando...</div>
+  }
+  const { data, removeFromCart, cartItems,addToCart } = context
 
   return (
-    <S.Container>
-<S.ContainerMain>
-  <p>Products</p>
-  <p>Title</p>
-  <p>Price</p>
-  <p>Quatity</p>
-  <p>Total</p>
-  <p>Remove</p>
-</S.ContainerMain>
-<hr />
-<S.ContainerCartItem>
-  <S.ContainerCartItemFormat>
+    <div>
+      <h1>Cart Items</h1>
+      {data.map((product:any) => {
 
-    <Image src='/' width={100} height={100} alt=''/>
-    <p></p>
-    <p></p>
-    <button></button>
-    <p></p>
-   <button onClick={()=>{removeFromCart()}}>Remove</button>
-   <hr />
-   {data.map((e: ProductProps) => {
-           
-           console.log(cartItems)
-            if (cartItems === 0) {
-              return (
-                <div key={e.price}>
-                  <Image src={e.thumbnail} width={100} height={100} alt="" />
-                  <p>{e.name}</p>
-                  <p>{e.price}</p>
-                  <button>click</button>
-                  <p>vezes</p>
-                  <button onClick={() => removeFromCart(e.price)}>Remove</button>
-                </div>
-              );
-            }
-            return null;
-          })}
-  </S.ContainerCartItemFormat>
-</S.ContainerCartItem>
-    </S.Container>
-  )
-}
+        const { title, price, thumbnail } = product;
+        const quantityInCart = cartItems[price] || 0;
 
-export default CartItems
+        
+          return (
+            <div key={price}>
+              <Image src={thumbnail} width={100} height={100} alt={title} />
+              <p>{title}</p>
+              <p>{price}</p>
+              <button>{quantityInCart}</button>
+              <p>{price * quantityInCart}</p>
+              <button onClick={() => addToCart && addToCart({ title, price, order_backend: 0 })}>+</button>
+              <button onClick={() => removeFromCart && removeFromCart(product.price)}>-</button>
+            </div>
+          );
+        
+      })}
+    </div>
+  );
+};
+
+export default CartItems;

@@ -1,18 +1,15 @@
-
-
-
-import { createContext, useState, useEffect, ReactNode } from "react";
+import React, { createContext, useState, useEffect, ReactNode, useContext } from "react";
 
 type ItemType = {
   title: string;
   price: number;
-  order_backend: number
+  order_backend: number;
 };
 
 type ShopContextType = {
   data: ItemType[];
   cartItems: Record<number, number>;
-  addToCart: (itemId: number) => void;
+  addToCart: (item: ItemType) => void;
   removeFromCart: (itemId: number) => void;
 };
 
@@ -23,11 +20,14 @@ type ShopContextProviderProps = {
 export const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
- 
   const [data, setData] = useState<ItemType[]>([]);
-  
 
   useEffect(() => {
+    const storedCartItems = localStorage.getItem('cartItems');
+    if (storedCartItems) {
+      setCartItems(JSON.parse(storedCartItems));
+    }
+
     fetch('https://api.mercadolibre.com/sites/MLB/search?q=celular')
       .then((res) => res.json())
       .then((newData) => {
@@ -37,38 +37,38 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
         setData(newData.results);
       })
       .catch((error) => {
-        console.error(error);
+        console.error('Erro ao buscar dados da API:', error);
       });
   }, []);
 
+  const getDefaultCart = () => {
+    const cart: Record<number, number> = {};
+    for (let index = 0; index < data.length; index++) {
+      cart[index] = 0;
+    }
+    return cart;
+  };
+  const [cartItems, setCartItems] = useState<Record<number, number>>({});
 
-  
-  
-const getDefaultCart = () => {
-  const cart: Record<number, number> = {}
-  for (let index = 0; index < data.length; index++) {
-    cart[index] = 0
-  }
-  return cart;
-}
+  const addToCart = (item: ItemType) => {
+    setCartItems((prev) => ({ ...prev, [item.price]: (prev[item.price] || 0) + 1 }));
+  };
 
-const addToCart = (itemId: number) => {
-  setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
-  
-}
+  const removeFromCart = (itemId: number) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: Math.max((prev[itemId] || 0) - 1, 0) }));
+  };
 
-const removeFromCart = (itemId: number) => {
-  setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
-}
-const [cartItems,setCartItems] = useState<Record<number, number>>(getDefaultCart())
+  useEffect(() => {
+    try {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    } catch (error) {
+      console.error('Erro ao salvar no localStorage:', error);
+    }
+  }, [cartItems]);
 
-
-  
-const contextValue: ShopContextType = { data, cartItems,addToCart,removeFromCart };
-
+  const contextValue: ShopContextType = { data, cartItems, addToCart, removeFromCart };
 
   return <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>;
 };
 
-export default ShopContextProvider; 
-
+export default ShopContextProvider;
