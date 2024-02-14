@@ -21,6 +21,7 @@ export const ShopContext = createContext<ShopContextType | undefined>(undefined)
 
 const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
   const [data, setData] = useState<ItemType[]>([]);
+  
 
   useEffect(() => {
     const storedCartItems = localStorage.getItem('cartItems');
@@ -52,6 +53,7 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
 
   const addToCart = (item: ItemType) => {
     setCartItems((prev) => ({ ...prev, [item.price]: (prev[item.price] || 0) + 1 }));
+    alert('item adicionado')
   };
 
   const removeFromCart = (itemId: number) => {

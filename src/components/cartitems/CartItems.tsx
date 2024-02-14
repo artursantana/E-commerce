@@ -2,38 +2,49 @@
 import React, { useContext } from 'react';
 import Image from 'next/image';
 import { ShopContext } from '@/context/ShopContext';
-
+import * as S from './style'
 
 const CartItems: React.FC = () => {
   const context = useContext(ShopContext);
-  if(!context){
-    return <div>carregando...</div>
+  if (!context) {
+    return <div>Carregando...</div>;
   }
-  const { data, removeFromCart, cartItems,addToCart } = context
+  const { data, removeFromCart, cartItems, addToCart } = context;
+
+  
+  const cartItemsToShow = data.filter((product: any) => cartItems[product.price] > 0);
 
   return (
-    <div>
-      <h1>Cart Items</h1>
-      {data.map((product:any) => {
-
+    <S.Container>
+      <S.ContainerHeader>
+        <p>Products</p>
+        <p>Title</p>
+        <p>Quantity</p>
+        <p>price</p>
+        <p>Total</p>
+      </S.ContainerHeader>
+      <hr />
+     
+      {cartItemsToShow.map((product: any) => {
         const { title, price, thumbnail } = product;
-        const quantityInCart = cartItems[price] || 0;
+        const quantityInCart = cartItems[price];
 
-        
-          return (
-            <div key={price}>
-              <Image src={thumbnail} width={100} height={100} alt={title} />
-              <p>{title}</p>
-              <p>{price}</p>
-              <button>{quantityInCart}</button>
-              <p>{price * quantityInCart}</p>
-              <button onClick={() => addToCart && addToCart({ title, price, order_backend: 0 })}>+</button>
+        return (
+          <S.ContainerCartItemAdd key={price}>
+              <Image src={thumbnail} width={100} height={100} alt={title} /> 
+            <p>{title.slice(0,20)}</p>
+            <div>
+              <button onClick={() => addToCart && addToCart(product)}>+</button>
+              <p>{quantityInCart}</p>
               <button onClick={() => removeFromCart && removeFromCart(product.price)}>-</button>
             </div>
-          );
-        
+            <p>$ {price}</p>
+            <p>$ {price * quantityInCart}</p>
+            
+          </S.ContainerCartItemAdd>
+        );
       })}
-    </div>
+    </S.Container>
   );
 };
 
