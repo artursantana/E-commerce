@@ -3,24 +3,27 @@
 import React from 'react'
 import * as S from './style'
 import Image from 'next/image'
+import LogoMain from '../../../public/sale.png'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
     <S.Container>
       <S.ContainerLeft>
-        <h2>New Arrivals Only</h2>
-        <div>
+        <div className='centralDiv'>
             <div className='handIcon'>
-                <p>new</p>
-                <Image src='/' width={100} height={100} alt=''/>
+                <h2>Cell Phones Near You Always</h2>
+               
+                <div className='heroLatest'>
+            <Link href='/shopcategory/ShopCategory?banner=%2F_next%2Fstatic%2Fmedia%2Fwomen.64447bfb.png'>
+              <div>Second Hand</div>
+            </Link>
+           
+        </div>
             </div>
-            <p>colletion</p>
-            <p>for everyone</p>
+            <Image src={LogoMain} width={100} height={100} alt=''/>
         </div>
-        <div className='heroLatest'>
-            <div>latest coletion</div>
-            <Image src='/' width={100} height={100} alt=''/>
-        </div>
+        
       </S.ContainerLeft>
       <S.ContainerRight>
         

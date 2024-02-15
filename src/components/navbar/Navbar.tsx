@@ -1,22 +1,24 @@
 import Link from 'next/link';
 import * as S from './style';
-import React, { ReactNode, useState } from 'react';
-import { useRouter } from 'next/navigation';
-
-import ShopCategory from '@/pages/shopcategory/ShopCategory';
+import React, { useContext, useEffect, useState } from 'react';
+import Image from 'next/image';
 import Men from '../../../public/men.png';
 import Women from '../../../public/women.png';
-
-import Image from 'next/image';
+import Logo from '../../../public/logo.png';
+import { ShopContext } from '@/context/ShopContext'
 
 const Navbar = () => {
   const [selectMenu, setSelectMenu] = useState<string | undefined>(undefined);
-  const router = useRouter();
+  const { getTotalCartItem } = useContext(ShopContext)
+  
+  console.log(getTotalCartItem)
+
+ 
 
   return (
     <S.Container>
       <S.ContainerLogo>
-        <Image src={Men.src} width={100} height={100} alt="artur" />
+        <Image src={Logo} width={100} height={100} alt="artur" />
         <p>Ecommerce</p>
       </S.ContainerLogo>
       <S.ContainerMenu>
@@ -27,30 +29,29 @@ const Navbar = () => {
         </Link>
 
         <Link href={{ pathname: '/shopcategory/ShopCategory', query: { banner: Men.src } }}>
-          <li onClick={() => setSelectMenu('Man')}>
-            Man{selectMenu === 'Man' ? <hr /> : <></>}
+          <li onClick={() => setSelectMenu('New Phones')}>
+            New Phones{selectMenu === 'New Phones' ? <hr /> : <></>}
           </li>
         </Link>
 
         <Link href={{ pathname: '/shopcategory/ShopCategory', query: { banner: Women.src } }}>
-          <li onClick={() => setSelectMenu('Women')}>
-            Women{selectMenu === 'Women' ? <hr /> : <></>}
+          <li onClick={() => setSelectMenu('Second Hand')}>
+            Second Hand{selectMenu === 'Second Hand' ? <hr /> : <></>}
           </li>
         </Link>
 
-        <Link href={{ pathname: '/product/Product'}}>
-        <li onClick={() => setSelectMenu('Product')}>
-          
-        </li>
-      </Link>
-
+        <Link href={{ pathname: '/product/Product' }}>
+          <li onClick={() => setSelectMenu('Product')}></li>
+        </Link>
       </S.ContainerMenu>
       <S.ContainerLoginCar>
         <Link href='/login/Login'>
           <button>Login</button>
         </Link>
-        <h1>icon car</h1>
-        <div className="carCount">0</div>
+        <Link href='/cart/Cart'>
+          <Image src='/smallCar.png' width={60} height={60} alt='' />
+        </Link>
+        <div className="carCount">{getTotalCartItem()}</div>
       </S.ContainerLoginCar>
     </S.Container>
   );

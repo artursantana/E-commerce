@@ -7,7 +7,8 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
 height: 100vh;
-background: linear-gradient(180deg, #fde1ff, transparent 60%);
+background: linear-gradient(180deg, #121212, transparent 60%);
+margin: 0px 100px 0px 100px ;
 
 `
 
@@ -17,23 +18,29 @@ flex-direction: column;
 flex: 1;
 justify-content: center;
 gap: 20px;
-padding-left: 180px;
-line-height: 1.1;
-h2{
-    color:#090909;
-    font-size: 26px;
-    font-weight: 600;
+
+.centralDiv{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh;
+img{
+    
+    width: 250px;
+    height: 250px;
 }
-p{
-    color: #171717;
-    font-size: 100px;
-    font-weight: 700;
 }
 
 .handIcon{
-h1{
-    width: 105px;
+display: flex;
+flex-direction: column;
+h2{
+    color: #121212;
+    text-shadow: 1px 1px 1px white;
+    font-size: 50px;
+    font-weight: 700;
 }
+
 }
 .heroLatest{
     display: flex;
@@ -44,7 +51,7 @@ h1{
     height: 70px;
     border-radius: 75px;
     margin-top: 30px;
-    background-color: #ff4141;
+    background-color: #121212;
     color: white;
     font-size: 22px;
     font-weight: 550;

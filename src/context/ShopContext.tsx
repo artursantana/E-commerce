@@ -11,6 +11,7 @@ type ShopContextType = {
   cartItems: Record<number, number>;
   addToCart: (item: ItemType) => void;
   removeFromCart: (itemId: number) => void;
+  getTotalCartItem:() => number;
 };
 
 type ShopContextProviderProps = {
@@ -21,6 +22,7 @@ export const ShopContext = createContext<ShopContextType | undefined>(undefined)
 
 const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
   const [data, setData] = useState<ItemType[]>([]);
+  const [CountCar,setCountCard] = useState(0)
   
 
   useEffect(() => {
@@ -42,6 +44,16 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
       });
   }, []);
 
+  const getTotalCartItem = () => {
+    let totalitem = 0
+    for(const item in  cartItems){
+      if(cartItems[item]>0){
+        totalitem += cartItems[item]
+      }
+    }
+    return totalitem
+  }
+
   const getDefaultCart = () => {
     const cart: Record<number, number> = {};
     for (let index = 0; index < data.length; index++) {
@@ -53,11 +65,13 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
 
   const addToCart = (item: ItemType) => {
     setCartItems((prev) => ({ ...prev, [item.price]: (prev[item.price] || 0) + 1 }));
+    setCountCard(CountCar+1)
     alert('item adicionado')
   };
 
   const removeFromCart = (itemId: number) => {
     setCartItems((prev) => ({ ...prev, [itemId]: Math.max((prev[itemId] || 0) - 1, 0) }));
+    setCountCard(CountCar-1)
   };
 
   useEffect(() => {
@@ -68,7 +82,7 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
     }
   }, [cartItems]);
 
-  const contextValue: ShopContextType = { data, cartItems, addToCart, removeFromCart };
+  const contextValue: ShopContextType = { getTotalCartItem, data, cartItems, addToCart, removeFromCart };
 
   return <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>;
 };

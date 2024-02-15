@@ -33,9 +33,8 @@ const Popular = () => {
   }, []);
 
   console.log()
-  const itemsToShow = data.slice(0, 3);
+  const itemsToShow = data.slice(2,6);
 
-console.log(data);
   return (
     <S.Container>
       <h1>Popular in Women</h1>

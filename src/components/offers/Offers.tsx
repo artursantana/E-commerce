@@ -3,6 +3,7 @@
 import React from 'react'
 import * as S from './style'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Offers = () => {
   return (
@@ -12,10 +13,10 @@ const Offers = () => {
         <h1>Exclusive</h1>
         <h1>Offers for You</h1>
     <p>ONLY ON BEST SELLERS PRODUCTS</p>
-    <button>Check Now</button>
+    <Link href='http://localhost:3000/shopcategory/ShopCategory?banner=%2F_next%2Fstatic%2Fmedia%2Fmen.93581f53.png'>Check Now</Link>
       </S.ContainerLeft>
       <S.ContainerRight>
-        <Image src='/' alt='' width={100} height={100}/>
+        <Image src='/offer.png' alt='' width={250} height={250}/>
       </S.ContainerRight>
     </S.Container>
   )
