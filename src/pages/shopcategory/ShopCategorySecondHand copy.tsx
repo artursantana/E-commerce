@@ -17,7 +17,7 @@ const ShopCategory: React.FC<Props> = ({ banner }) => {
   banner = router.query.banner as string;
 
   const { data } = useContext(ShopContext)!;
-  const newData = data.slice(0, 5);
+  const newData = data.slice(0, 16);
 
   return (
     <S.Container>
@@ -25,14 +25,7 @@ const ShopCategory: React.FC<Props> = ({ banner }) => {
         <h1>Saldos -50%</h1>
         <Image src={banner} width={300} height={300} alt="" />
       </div>
-      <S.ContainerIndexSort>
-        <p>
-          <span>Showing 1-12</span> out of 36 products
-        </p>
-        <S.ContainerCategorySort>
-          Sort by <Image src="/" width={100} height={100} alt="" />
-        </S.ContainerCategorySort>
-      </S.ContainerIndexSort>
+      
       <S.ContainerProducts>
         <div className='itens'>
           {newData.map((item, index) => (

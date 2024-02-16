@@ -2,12 +2,12 @@
 
 
 import styled from "@emotion/styled";
-
+import { lettersColor} from '../../pages/theme'
 
 
 export const Container = styled.div`
 height: 100vh;
-background: linear-gradient(180deg, #121212, transparent 60%);
+
 margin: 0px 100px 0px 100px ;
 
 `
@@ -39,22 +39,32 @@ h2{
     text-shadow: 1px 1px 1px white;
     font-size: 50px;
     font-weight: 700;
+    span{
+        color: ${lettersColor};
+    }
 }
 
 }
 .heroLatest{
+    a{
+
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    width: 310px;
-    height: 70px;
+    margin: auto;
+    padding: 15px;
     border-radius: 75px;
     margin-top: 30px;
     background-color: #121212;
-    color: white;
     font-size: 22px;
     font-weight: 550;
+    text-decoration: none;
+    color: #FFF;
+}
+    
+    &:hover{
+        opacity: 0.9;
+    }
 }
 
 

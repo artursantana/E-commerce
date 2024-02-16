@@ -1,6 +1,7 @@
 
 
 import styled from "@emotion/styled";
+import { lettersColor,ColorContainer} from '../../pages/theme'
 
 
 export const Container = styled.div`
@@ -9,7 +10,7 @@ export const Container = styled.div`
     display: flex;
     width: 80%;
     height: 45vh;
-    background-color: #454545;
+    background-color: ${ColorContainer};
     position: relative;
     margin: auto;
     align-items: center;
@@ -17,7 +18,7 @@ export const Container = styled.div`
 
     h1{
         display: flex;
-        font-size: 145px;
+        font-size: 45px;
         color: hotpink;
         align-items: baseline;
     }
@@ -33,28 +34,12 @@ export const Container = styled.div`
 
 
 `
-export const ContainerIndexSort = styled.div`
 
-display: flex;
-margin: 0 170px;
-justify-content: space-between;
-align-items: center;
-
-span{
-    font-weight: 600;
-}
-`
-export const ContainerCategorySort = styled.div`
-
-padding: 10px 20px;
-border-radius: 40px;
-border: 1px solid #888;
-
-`
 export const ContainerProducts = styled.div`
 
 
 .itens{
+    padding: 25px;
     margin: auto;
     display:flex;
     flex-wrap: wrap;

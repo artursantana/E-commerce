@@ -12,11 +12,11 @@ const Hero = () => {
       <S.ContainerLeft>
         <div className='centralDiv'>
             <div className='handIcon'>
-                <h2>Cell Phones Near You Always</h2>
+                <h2><span>Cell Phones</span> Near You Always</h2>
                
                 <div className='heroLatest'>
             <Link href='/shopcategory/ShopCategory?banner=%2F_next%2Fstatic%2Fmedia%2Fwomen.64447bfb.png'>
-              <div>Second Hand</div>
+              Second Hand
             </Link>
            
         </div>
@@ -26,7 +26,7 @@ const Hero = () => {
         
       </S.ContainerLeft>
       <S.ContainerRight>
-        
+        <hr />
       </S.ContainerRight>
     </S.Container>
   )

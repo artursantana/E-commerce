@@ -6,30 +6,31 @@
 import React from 'react'
 import * as S from './style'
 import Image from 'next/image'
+import Link from 'next/link'
+import Logo from '../../../public/logo.png'
+import LogoFooter from '../../../public/sale.webp'
 
 const Footer = () => {
   return (
     <S.Container>
         <S.ContainerLogo>
-        <Image src='/' width={100} height={100} alt=''/>
+        <Image src={Logo} width={100} height={100} alt=''/>
         <p>E-commerce</p>
         </S.ContainerLogo>
         <S.ContainerLinks>
-            <li>Company</li>
-            <li>Products</li>
-            <li>Offices</li>
-            <li>About</li>
-            <li>Contact</li>
+            <Link href='/shop/Shop'>Shop</Link>
+            <Link href='/shopcategory/ShopCategory?banner=%2F_next%2Fstatic%2Fmedia%2Fmen.93581f53.png'>NewPhones</Link>
+            <Link href='/cart/Cart'>Car</Link>
         </S.ContainerLinks>
         <S.ContainerSocialIcon>
             <div className='IconContainer'>
-            <Image src='/' width={100} height={100} alt=''/>
+            <Image src={LogoFooter} width={100} height={100} alt=''/>
             </div>
             <div className='IconContainer'>
-            <Image src='/' width={100} height={100} alt=''/>
+            <Image src={LogoFooter} width={100} height={100} alt=''/>
             </div>
             <div className='IconContainer'>
-            <Image src='/' width={100} height={100} alt=''/>
+            <Image src={LogoFooter} width={100} height={100} alt=''/>
             </div>
         </S.ContainerSocialIcon>
         <S.footercopyright>

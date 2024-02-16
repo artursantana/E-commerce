@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { lettersColor,ColorContainer } from '../../pages/theme'
 
 
 export const Container = styled.div`
@@ -9,7 +10,7 @@ height: 60vh;
 margin: auto;
 padding: 0px 140px;
 margin-bottom: 150px;
-background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+
 
 `
 export const ContainerLeft = styled.div`
@@ -19,28 +20,35 @@ flex-direction: column;
 justify-content: center;
 
 h1{
-    color: #171717;
+    
     font-size: 80px;
     font-weight: 600;
 }
 
 p{
-    color: #171717;
+    color: ${lettersColor};
     font-size: 22px;
     font-weight: 600;
 }
 
-button{
+a{
+    display: flex;
     width: 282px;
-    height: 70px;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
     border-radius: 35px;
-    background: #ff4141;
+    background: ${ColorContainer};
     border: none;
-    color: white;
+    color: #FFF;
     font-size: 22px;
     font-weight: 500;
     margin-top: 30px;
     cursor: pointer;
+    &:hover{
+        opacity: 0.9;
+    }
 }
 
 `

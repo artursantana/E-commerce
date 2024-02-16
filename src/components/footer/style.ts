@@ -1,12 +1,9 @@
 
 
 import styled from "@emotion/styled";
-
-
-
+import { lettersColor,ColorContainer} from '../../pages/theme'
 
 export const Container = styled.div`
-
 
 display: flex;
 flex-direction: column;
@@ -23,7 +20,7 @@ align-items: center;
 gap: 20px;
 
 p{
-    color: #383838;
+    color: ${ColorContainer};
     font-size: 46px;
     font-weight: 700;
 }
@@ -34,8 +31,13 @@ export const ContainerLinks = styled.ul`
 display: flex;
 list-style: none;
 gap: 50px;
-color: #252525;
+text-shadow: 1px 2px 3px ${ColorContainer};
 font-size: 20px;
+
+a{
+    text-decoration: none;
+    color: ${lettersColor};
+}
 
 
 `
@@ -48,13 +50,12 @@ gap: 20px;
 
 .IconContainer{
     padding: 10px 10px 6px 10px;
-background: #fbfbfb;
+background: #FFF;
 border: 1px;
 }
 li{
     cursor: pointer;
 }
-
 
 `
 export const footercopyright = styled.div`
@@ -65,7 +66,7 @@ align-items: center;
 gap: 30px;
 width: 100%;
 margin-bottom: 30px;
-color: #1a1a1a;
+color: ${ColorContainer};
 
 
 hr{
@@ -73,6 +74,6 @@ hr{
     border: none;
     border-radius: 10px;
     height: 3px;
-    background-color: #c7c7c7;
+    background-color: #FFF;
 }
 `

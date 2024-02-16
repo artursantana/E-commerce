@@ -1,6 +1,7 @@
 
 
 import styled from "@emotion/styled";
+import { lettersColor,ColorContainer} from '../../pages/theme'
 
 
 export const Container = styled.div`
@@ -12,15 +13,16 @@ gap: 10px;
 height: 90vh;
 
 h1{
-    color: #171717;
+    color: ${ColorContainer};
     font-size: 50px;
     font-weight: 600;
+    
 }
 hr{
     width: 200px;
     height: 6px;
     border-radius: 10px;
-    background-color: #252525;
+    background-color:${lettersColor};
 }
 
 `
@@ -28,6 +30,8 @@ hr{
 export const ContainerItem = styled.div`
 
 display: flex;
+justify-content: center;
+width: 80%;
 margin-top: 50px;
 gap: 30px;
 

@@ -16,6 +16,7 @@ const Navbar = () => {
  
 
   return (
+    <>
     <S.Container>
       <S.ContainerLogo>
         <Image src={Logo} width={100} height={100} alt="artur" />
@@ -28,13 +29,13 @@ const Navbar = () => {
           </li>
         </Link>
 
-        <Link href={{ pathname: '/shopcategory/ShopCategory', query: { banner: Men.src } }}>
+        <Link href={{ pathname: '/shopcategory/NewPhones', query: { banner: Men.src } }}>
           <li onClick={() => setSelectMenu('New Phones')}>
             New Phones{selectMenu === 'New Phones' ? <hr /> : <></>}
           </li>
         </Link>
 
-        <Link href={{ pathname: '/shopcategory/ShopCategory', query: { banner: Women.src } }}>
+        <Link href={{ pathname: '/shopcategory/ShopCategorySecondHand', query: { banner: Women.src } }}>
           <li onClick={() => setSelectMenu('Second Hand')}>
             Second Hand{selectMenu === 'Second Hand' ? <hr /> : <></>}
           </li>
@@ -54,6 +55,8 @@ const Navbar = () => {
         <div className="carCount">{getTotalCartItem()}</div>
       </S.ContainerLoginCar>
     </S.Container>
+    <hr />
+    </>
   );
 };
 
