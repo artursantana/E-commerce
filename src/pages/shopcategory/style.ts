@@ -7,7 +7,10 @@ import { lettersColor,ColorContainer} from '../../pages/theme'
 export const Container = styled.div`
 
 .loading{
-    font-size: 100px;
+    width: 300px;
+    height: 70vh;
+    margin: auto;
+    font-size: 70px;
 }
 
 .banner{

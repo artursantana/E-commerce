@@ -9,7 +9,7 @@ import { lettersColor,ColorContainer} from '../../pages/theme'
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
-margin: 0px 170px;
+background-color: red;
 
 
 h1{
@@ -25,15 +25,14 @@ gap: 17px;
 margin-top: 25px;
 `
 export const ContainerImgList = styled.div`
-
 display: flex;
 flex-direction: column;
-
-
 
 `
 export const ContainerImgMain = styled.div`
 margin: auto;
+
+
 img{
     width: 300px;
     height: 300px;
@@ -46,6 +45,7 @@ display: flex;
 flex-direction: column;
 padding: 25px;
 margin-bottom: 55px;
+
 
 button{
     display: flex;
@@ -79,5 +79,11 @@ p{
         color: ${lettersColor};
     }
 }
+
+`
+
+export const Description = styled.div`
+
+
 
 `

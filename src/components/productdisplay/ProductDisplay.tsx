@@ -23,7 +23,6 @@ const ProductDisplay = ({ product }: { product?: Props }) => {
 
   const titleResume = title.slice(0,30)
 
-  console.log(cartItems)
   return (
     <S.Container>
       <h1>{titleResume}</h1>
@@ -45,6 +44,9 @@ const ProductDisplay = ({ product }: { product?: Props }) => {
         </S.ContainerRightPrices>
         <button onClick={() => addToCart && addToCart({ title, price, order_backend: 0 })}>add to card</button>
       </S.ContainerRight>
+      <S.Description>
+        <h1>Description : </h1>
+      </S.Description>
     </S.Container>
   );
 };

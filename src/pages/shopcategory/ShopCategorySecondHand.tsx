@@ -21,7 +21,7 @@ const ShopCategory: React.FC<Props> = ({ banner }) => {
 
   return (
     <>
-    {data && data.length == 0 && <h1>Loading...</h1>}
+    {data && data.length == 0 && <S.Container> <h1 className='loading'>Loading...</h1> </S.Container>}
     {
       data && data.length != 0 && (
         <S.Container>
