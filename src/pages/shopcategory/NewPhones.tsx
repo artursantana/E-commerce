@@ -5,9 +5,6 @@ import Image from 'next/image';
 import Item from '../../components/item/Item';
 import { useRouter } from 'next/router';
 
-
-
-
 interface Props {
   banner: string;
 }
@@ -20,22 +17,27 @@ const ShopCategory: React.FC<Props> = ({ banner }) => {
   const newData = data.slice(17, 33);
 
   return (
-    <S.Container>
-      <div className='banner'>
-        <h1>The Best New Phones on the Market</h1>
-        <Image src={banner} width={300} height={300} alt="" />
-      </div>
-      
-      <S.ContainerProducts>
-        <div className='itens'>
-          {newData.map((item, index) => (
-            item.title && (
-              <Item key={index} price={item.price} img={item.thumbnail} />
-            )
-          ))}
-        </div>
-      </S.ContainerProducts>
-    </S.Container>
+    <>
+      {data && data.length === 0 && <h1 className='loading'>Loading...</h1>}
+      {data && data.length !== 0 && (
+        <S.Container>
+          <div className='banner'>
+            <h1>The Best New Phones on the Market</h1>
+            <Image src={banner} width={300} height={300} alt="" />
+          </div>
+
+          <S.ContainerProducts>
+            <div className='itens'>
+              {newData.map((item, index) => (
+                item.title && (
+                  <Item key={index} price={item.price} img={item.thumbnail} />
+                )
+              ))}
+            </div>
+          </S.ContainerProducts>
+        </S.Container>
+      )}
+    </>
   );
 };
 

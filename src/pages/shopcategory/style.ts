@@ -6,6 +6,10 @@ import { lettersColor,ColorContainer} from '../../pages/theme'
 
 export const Container = styled.div`
 
+.loading{
+    font-size: 100px;
+}
+
 .banner{
     display: flex;
     width: 80%;

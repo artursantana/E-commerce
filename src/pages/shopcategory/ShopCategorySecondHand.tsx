@@ -20,7 +20,11 @@ const ShopCategory: React.FC<Props> = ({ banner }) => {
   const newData = data.slice(0, 16);
 
   return (
-    <S.Container>
+    <>
+    {data && data.length == 0 && <h1>Loading...</h1>}
+    {
+      data && data.length != 0 && (
+        <S.Container>
       <div className='banner'>
         <h1>Number 1 Store for Used Phones</h1>
         <Image src={banner} width={300} height={300} alt="" />
@@ -36,6 +40,9 @@ const ShopCategory: React.FC<Props> = ({ banner }) => {
         </div>
       </S.ContainerProducts>
     </S.Container>
+      )
+    }
+    </>
   );
 };
 
