@@ -14,7 +14,7 @@ const Offers = () => {
           <h1>Exclusive</h1>
           <h1>Offers for You</h1>
       <p>ONLY ON BEST SELLERS PRODUCTS</p>
-      <Link href='http://localhost:3000/shopcategory/ShopCategory?banner=%2F_next%2Fstatic%2Fmedia%2Fmen.93581f53.png'>Check Now</Link>
+      <Link href='/shopcategory/NewPhones?banner=%2F_next%2Fstatic%2Fmedia%2Fmen.93581f53.png'>Check Now</Link>
         </S.ContainerLeft>
         <S.ContainerRight>
           <Image src='/offer.png' alt='' width={250} height={250}/>

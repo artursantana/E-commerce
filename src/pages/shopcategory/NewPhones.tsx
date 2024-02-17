@@ -22,7 +22,7 @@ const ShopCategory: React.FC<Props> = ({ banner }) => {
   return (
     <S.Container>
       <div className='banner'>
-        <h1>the best new phones on the market</h1>
+        <h1>The Best New Phones on the Market</h1>
         <Image src={banner} width={300} height={300} alt="" />
       </div>
       

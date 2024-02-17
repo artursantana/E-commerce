@@ -15,7 +15,7 @@ const Hero = () => {
                 <h2><span>Cell Phones</span> Near You Always</h2>
                
                 <div className='heroLatest'>
-            <Link href='/shopcategory/ShopCategory?banner=%2F_next%2Fstatic%2Fmedia%2Fwomen.64447bfb.png'>
+            <Link href='/shopcategory/ShopCategorySecondHand?banner=%2F_next%2Fstatic%2Fmedia%2Fwomen.64447bfb.png'>
               Second Hand
             </Link>
            

@@ -21,10 +21,12 @@ const ProductDisplay = ({ product }: { product?: Props }) => {
   const { addToCart,cartItems } = context;
   const { title, price, thumbnail } = product;
 
+  const titleResume = title.slice(0,30)
+
   console.log(cartItems)
   return (
     <S.Container>
-      <h1>{title}</h1>
+      <h1>{titleResume}</h1>
       <S.ContainerLeft>
         <S.ContainerImgList>
           <Image src={thumbnail} width={100} height={100} alt='' />
@@ -38,7 +40,7 @@ const ProductDisplay = ({ product }: { product?: Props }) => {
       </S.ContainerLeft>
       <S.ContainerRight>
         <S.ContainerRightPrices>
-          <p>New Price : {price}</p>
+          <p><span>New Price</span> : {price}</p>
           <p>Old Price : {product.original_price ? product.original_price : 'Promocao'}</p>
         </S.ContainerRightPrices>
         <button onClick={() => addToCart && addToCart({ title, price, order_backend: 0 })}>add to card</button>

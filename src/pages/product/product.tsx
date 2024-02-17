@@ -1,7 +1,6 @@
 import { ShopContext } from '@/context/ShopContext';
 import { useContext } from 'react';
 import * as S from './style';
-import BreadCrum from '@/components/breadcrum/BreadCrum';
 import ProductDisplay from '@/components/productdisplay/ProductDisplay';
 import { useRouter } from 'next/router';
 
@@ -17,7 +16,6 @@ const Product: React.FC = () => {
     <S.Container>
       <div>
 
-        <BreadCrum />
         <ProductDisplay product={product} />
       </div>
     </S.Container>
