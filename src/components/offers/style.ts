@@ -6,16 +6,13 @@ export const Container = styled.div`
 
 display: flex;
 width: 65%;
-height: 60vh;
 margin: auto;
-padding: 0px 140px;
-margin-bottom: 150px;
-
+margin-bottom: 100px;
+background-color: red;
 
 `
 export const ContainerLeft = styled.div`
 display: flex;
-flex: 1;
 flex-direction: column;
 justify-content: center;
 
@@ -59,6 +56,6 @@ flex: 1;
 display: flex;
 align-items: center;
 justify-content: flex-end;
-padding-top: 50px;
+
 
 `

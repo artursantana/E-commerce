@@ -1,8 +1,9 @@
 
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import * as S from './style'
 import Item from '../item/Item';
+import { ShopContext } from '@/context/ShopContext';
 
 
 type ItemType = {
@@ -14,9 +15,11 @@ type ItemType = {
   
 };
 
+
 const Popular = () => {
 
   const [data, setData] = useState<ItemType[]>([]);
+  const { widthPage } = useContext(ShopContext)
 
   useEffect(() => {
     fetch('https://api.mercadolibre.com/sites/MLB/search?q=celular')
@@ -32,14 +35,13 @@ const Popular = () => {
       });
   }, []);
 
-  console.log()
   const itemsToShow = data.slice(2,6);
 
   return (
     <S.Container>
       <h1>Popular in Women</h1>
       <hr />
-      <S.ContainerItem>
+      <S.ContainerItem widthPage={widthPage}>
         {itemsToShow.map((item, index) => ( 
       <Item key={index} title={item.title} price={item.price}  img={item.thumbnail}/> 
         ))}

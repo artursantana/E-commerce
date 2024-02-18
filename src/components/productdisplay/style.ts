@@ -9,7 +9,10 @@ import { lettersColor,ColorContainer} from '../../pages/theme'
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
-background-color: red;
+align-items: center;
+justify-content: center;
+margin: 50px 0px 50px 0px;
+
 
 
 h1{
@@ -17,9 +20,17 @@ display: flex;
 margin: auto;
 }
 
-`
-export const ContainerLeft = styled.div`
 
+`
+
+export const SubContainer = styled.div`
+display: flex;
+box-shadow: 1px 1px 10px #323232;
+`
+
+
+
+export const ContainerLeft = styled.div`
 display: flex;
 gap: 17px;
 margin-top: 25px;
@@ -44,7 +55,7 @@ export const ContainerRight = styled.div`
 display: flex;
 flex-direction: column;
 padding: 25px;
-margin-bottom: 55px;
+
 
 
 button{
@@ -71,13 +82,19 @@ button{
 `
 export const ContainerRightPrices = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: space-around;
 
-p{
+h1{
     font-weight:600;
+    color: ${lettersColor};
     span{
-        color: ${lettersColor};
+        color: ${ColorContainer};
     }
+}
+h3{
+    color: #646464;
+    text-decoration: line-through
 }
 
 `

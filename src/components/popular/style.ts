@@ -2,6 +2,7 @@
 
 import styled from "@emotion/styled";
 import { lettersColor,ColorContainer} from '../../pages/theme'
+import {css} from "@emotion/react";
 
 
 export const Container = styled.div`
@@ -10,31 +11,38 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 10px;
-height: 90vh;
+height: 80vh;
 
 h1{
+    text-align: center;
     color: ${ColorContainer};
     font-size: 50px;
     font-weight: 600;
     
 }
+
 hr{
     width: 200px;
     height: 6px;
     border-radius: 10px;
     background-color:${lettersColor};
 }
-
 `
 
-export const ContainerItem = styled.div`
+export const ContainerItem = styled.div<{widthPage?:number}>`
 
 display: flex;
+flex-wrap: wrap;
 justify-content: center;
-width: 80%;
-margin-top: 50px;
-gap: 30px;
 
+margin: 50px 0px 50px 0px;
+
+${({widthPage})=>(widthPage || 0) < 600 ? css`
+width: 80%;
+overflow-y: scroll;
+`:css`
+
+`};
 
 `
 

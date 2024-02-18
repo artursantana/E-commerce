@@ -6,16 +6,19 @@ import { lettersColor} from '../../pages/theme'
 
 
 export const Container = styled.div`
-height: 100vh;
 
-margin: 0px 100px 0px 100px ;
+display: flex;
+margin: auto;
+height: 80vh;
+padding: 25px;
+margin-bottom: 25px;
 
 `
 
 export const ContainerLeft = styled.div`
 display: flex;
+margin: auto;
 flex-direction: column;
-flex: 1;
 justify-content: center;
 gap: 20px;
 
@@ -34,6 +37,7 @@ img{
 .handIcon{
 display: flex;
 flex-direction: column;
+
 h2{
     color: #121212;
     text-shadow: 1px 1px 1px white;
@@ -47,7 +51,6 @@ h2{
 }
 .heroLatest{
     a{
-
     display: flex;
     justify-content: center;
     align-items: center;

@@ -6,49 +6,47 @@ import Men from '../../../public/men.png';
 import Women from '../../../public/women.png';
 import Logo from '../../../public/logo.png';
 import { ShopContext } from '@/context/ShopContext'
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
-  const [selectMenu, setSelectMenu] = useState<string | undefined>(undefined);
-  const { getTotalCartItem } = useContext(ShopContext)
   
-  console.log(getTotalCartItem)
+  const pathname = usePathname()
+  const { getTotalCartItem,widthPage } = useContext(ShopContext)
+  
+  
 
- 
+ console.log(widthPage)
 
   return (
     <>
-    <S.Container>
-      <S.ContainerLogo>
+    <S.Container widthPage={widthPage}>
+      <S.ContainerLogo widthPage={widthPage}>
         <Image src={Logo} width={100} height={100} alt="artur" />
         <p>Ecommerce</p>
       </S.ContainerLogo>
       <S.ContainerMenu>
-        <Link href='/shop/Shop'>
-          <li onClick={() => setSelectMenu('Shop')}>
-            Shop{selectMenu === 'Shop' ? <hr /> : <></>}
+        <Link href='/shop/Shop' >
+          <li className={pathname === '/shop/Shop' ? 'select' : ''}>
+            Shop
           </li>
         </Link>
 
         <Link href={{ pathname: '/shopcategory/NewPhones', query: { banner: Men.src } }}>
-          <li onClick={() => setSelectMenu('New Phones')}>
-            New Phones{selectMenu === 'New Phones' ? <hr /> : <></>}
+        <li className={pathname === '/shopcategory/NewPhones' ? 'select' : ''}>
+            NewPhones
           </li>
         </Link>
 
         <Link href={{ pathname: '/shopcategory/ShopCategorySecondHand', query: { banner: Women.src } }}>
-          <li onClick={() => setSelectMenu('Second Hand')}>
-            Second Hand{selectMenu === 'Second Hand' ? <hr /> : <></>}
+        <li className={pathname === '/shopcategory/ShopCategorySecondHand' ? 'select' : ''}>
+            SecondHand
           </li>
         </Link>
 
         <Link href={{ pathname: '/product/Product' }}>
-          <li onClick={() => setSelectMenu('Product')}></li>
         </Link>
       </S.ContainerMenu>
-      <S.ContainerLoginCar>
-        <Link href='/login/Login'>
-          <button>Login</button>
-        </Link>
+      <S.ContainerLoginCar widthPage={widthPage}>
         <Link href='/cart/Cart'>
           <Image src='/smallCar.png' width={60} height={60} alt='' />
         </Link>

@@ -2,22 +2,45 @@
 
 import styled from "@emotion/styled";
 import { lettersColor,ColorContainer } from '../../pages/theme'
+import { css } from "@emotion/react";
 
 
-export const Container = styled.div`
+export const Container = styled.div<{widthPage?:number}>`
 
 display: flex;
-justify-content: space-around;
 padding: 16px;
 box-shadow: 0 1px 3px -2px black;
+
+${({widthPage}) => (widthPage || 0) < 800 ? css`
+    
+    justify-content: space-between;
+    `: css`
+    justify-content: space-around;
+    `
+};
+${({widthPage}) => (widthPage || 0) < 500 ? css`
+ justify-content: center;
+    `: css`
+    
+    `
+};
+
 
 
 `
 
-export const ContainerLogo = styled.div`
-display: flex;
+export const ContainerLogo = styled.div<{widthPage?:number}>`
+
+
+${({widthPage}) => (widthPage || 0) < 800 ? css`
+display: none;
+    
+    `: css`
+    display: flex;
 align-items: center;
 gap: 10px;
+    `
+};
 
 
 p{
@@ -35,9 +58,16 @@ gap: 50px;
 
 
 a{
+        
         text-decoration: none;
         list-style: none;
         color: black;
+        .select{
+      background-color: #323232;
+      border-radius: 75px;
+      color: white;
+    }
+    
     }
 
 li{
@@ -47,6 +77,7 @@ li{
     justify-content: center;
     gap: 3px;
     cursor: pointer;
+    padding: 5px;
    
     
 }
@@ -58,26 +89,21 @@ hr{
 }
 
 `
-export const ContainerLoginCar = styled.div`
+export const ContainerLoginCar = styled.div<{widthPage?:number}>`
 display: flex;
 align-items: center;
 gap: 45px;
 
-button{
-    width: 157px;
-    height: 58px;
-    border: none;
-    border-radius: 75px;
-    font-size: 20px;
-    font-weight: 500;
-    background-color: ${ColorContainer};
-    color: #FFF;
-    cursor: pointer;
+${({widthPage}) => (widthPage || 0) < 550 ? css`
+ position: fixed;
+ right: 0;
+ bottom: 0;
+ background-color: #FFF;
+ `: css`
+ 
+ `
+};
 
-    &:active{
-        opacity: 0.5;
-    }
-}
 
 .carCount{
     display: flex;
@@ -91,6 +117,7 @@ button{
     font-size: 14px;
     background-color: ${lettersColor};
     color: white;
+   
 }
 
 

@@ -7,6 +7,7 @@ type ItemType = {
 };
 
 type ShopContextType = {
+  widthPage:number | undefined
   data: ItemType[];
   cartItems: Record<number, number>;
   addToCart: (item: ItemType) => void;
@@ -23,6 +24,7 @@ export const ShopContext = createContext<ShopContextType | undefined>(undefined)
 const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
   const [data, setData] = useState<ItemType[]>([]);
   const [CountCar,setCountCard] = useState(0)
+  const [widthPage, setWidthPage] = useState<number>()
   
 
   useEffect(() => {
@@ -82,7 +84,20 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
     }
   }, [cartItems]);
 
-  const contextValue: ShopContextType = { getTotalCartItem, data, cartItems, addToCart, removeFromCart };
+  useEffect(() => {
+
+    setWidthPage(window.innerWidth);
+
+    const handleResize = () => {
+      setWidthPage(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+
+  }, []);
+
+  const contextValue: ShopContextType = { widthPage,getTotalCartItem, data, cartItems, addToCart, removeFromCart };
 
   return <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>;
 };
