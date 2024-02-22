@@ -3,6 +3,7 @@
 
 import styled from "@emotion/styled";
 import { lettersColor,ColorContainer} from '../../pages/theme'
+import {css} from "@emotion/react";
 
 
 
@@ -17,15 +18,23 @@ margin: 50px 0px 50px 0px;
 
 h1{
 display: flex;
-margin: auto;
 }
-
 
 `
 
-export const SubContainer = styled.div`
+export const SubContainer = styled.div<{widthPage?: number}>`
 display: flex;
 box-shadow: 1px 1px 10px #323232;
+
+${({widthPage})=> (widthPage || 0) < 885 ? css`
+flex-direction: column;
+
+width: 90%;
+`:
+css`
+max-width: 885px;
+`}
+
 `
 
 
@@ -40,13 +49,23 @@ display: flex;
 flex-direction: column;
 
 `
-export const ContainerImgMain = styled.div`
+export const ContainerImgMain = styled.div<{widthPage?:number}>`
 margin: auto;
 
 
 img{
+
+    ${({widthPage})=> (widthPage || 0) < 450 ? css`
+
+    width: 200px;
+    height: 200px;
+
+`:
+css`
     width: 300px;
-    height: 300px;
+    height: 300px;  
+`}
+    
 }
 
 

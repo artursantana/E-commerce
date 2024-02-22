@@ -18,16 +18,15 @@ const ProductDisplay = ({ product }: { product?: Props }) => {
   if (!context || !product) {
     return <h1>Carregando...</h1>;
   }
-  const { addToCart,cartItems } = context;
+  const { addToCart,widthPage } = context;
   const { title, price, thumbnail, } = product;
 
 
   const titleResume = title.slice(0,30)
-
-  console.log(product)
+console.log(widthPage)
   return (
     <S.Container>
-      <S.SubContainer>
+      <S.SubContainer widthPage={widthPage}>
       
       <S.ContainerLeft>
         <S.ContainerImgList>
@@ -36,15 +35,15 @@ const ProductDisplay = ({ product }: { product?: Props }) => {
           <Image src={thumbnail} width={100} height={100} alt='' />
           <Image src={thumbnail} width={100} height={100} alt='' />
         </S.ContainerImgList>
-        <S.ContainerImgMain>
+        <S.ContainerImgMain widthPage={widthPage}>
           <Image src={thumbnail} width={100} height={100} alt='' />
         <h1>{titleResume}</h1>
-        </S.ContainerImgMain>
+        </S.ContainerImgMain >
       </S.ContainerLeft>
     
       <S.ContainerRight>
         <S.ContainerRightPrices>
-          <h1><span>New Price</span> : {price}</h1>
+          <h1><span>New Price: </span>  {price}</h1>
           <h3>Old Price : {product.original_price ? product.original_price : 'Promocao'}</h3>
         </S.ContainerRightPrices>
         <S.Description>

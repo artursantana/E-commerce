@@ -8,10 +8,13 @@ import {css} from "@emotion/react";
 export const Container = styled.div`
 
 display: flex;
+margin: auto;
 flex-direction: column;
 align-items: center;
 gap: 10px;
+width: 90%;
 height: 80vh;
+box-shadow: 1px 2px 5px black;
 
 h1{
     text-align: center;
