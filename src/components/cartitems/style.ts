@@ -1,38 +1,54 @@
 
 
 import styled from "@emotion/styled";
+import { lettersColor,ColorContainer} from '../../pages/theme'
 
 
 export const Container = styled.div`
-margin: 100px 170px;
+display: flex;
+margin: 150px 0px 150px 0px;
+width: 100%;
+justify-content: center;
 
-hr{
-
+table{
+   
 }
 
-`
-
-
-export const ContainerHeader = styled.div`
-display: grid;
-grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
-align-items: center;
-color: #454545;
-font-size: 18px;
-gap: 50px;
-
 
 `
-export const ContainerCartItemAdd = styled.div`
-display: grid;
-grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
-align-items: center;
-gap: 50px;
 
 
-img{
+export const ContainerHeader = styled.thead`
+
+
+td{
+    text-align: center;
+    color: ${lettersColor};
+    font-weight: 600;
+    width: 200px;
     
 }
+
+
+`
+export const ContainerBody = styled.tbody`
+
+tr{
+        
+    }
+td{
+    text-align: center;
+    
+    
+}
+
+
+`
+export const ContainerCartItemAdd = styled.tr`
+
+
+
+
 
 
 `

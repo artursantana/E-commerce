@@ -9,9 +9,9 @@ export const Container = styled.div`
 
 display: flex;
 margin: auto;
+width: 90%;
 height: 80vh;
-padding: 25px;
-margin-bottom: 25px;
+margin-bottom: 65px;
 
 `
 
@@ -28,7 +28,6 @@ justify-content: center;
 align-items: center;
 height: 80vh;
 img{
-    
     width: 250px;
     height: 250px;
 }

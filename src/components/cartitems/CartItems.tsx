@@ -9,41 +9,46 @@ const CartItems: React.FC = () => {
   if (!context) {
     return <div>Carregando...</div>;
   }
-  const { data, removeFromCart, cartItems, addToCart } = context;
 
-  
+  const { data, removeFromCart, cartItems, addToCart } = context;
   const cartItemsToShow = data.filter((product: any) => cartItems[product.price] > 0);
 
+  
   return (
     <S.Container>
-      <S.ContainerHeader>
-        <p>Products</p>
-        <p>Title</p>
-        <p>Quantity</p>
-        <p>price</p>
-        <p>Total</p>
-      </S.ContainerHeader>
-      <hr />
-     
-      {cartItemsToShow.map((product: any) => {
-        const { title, price, thumbnail } = product;
-        const quantityInCart = cartItems[price];
-
-        return (
-          <S.ContainerCartItemAdd key={price}>
-              <Image src={thumbnail} width={100} height={100} alt={title} /> 
-            <p>{title.slice(0,20)}</p>
-            <div>
-              <button onClick={() => addToCart && addToCart(product)}>+</button>
-              <p>{quantityInCart}</p>
-              <button onClick={() => removeFromCart && removeFromCart(product.price)}>-</button>
-            </div>
-            <p>$ {price}</p>
-            <p>$ {price * quantityInCart}</p>
-            
-          </S.ContainerCartItemAdd>
-        );
-      })}
+      <table>
+        <S.ContainerHeader>
+          <tr>
+            <td>Products</td>
+            <td>Title</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Total</td>
+          </tr>
+          
+        </S.ContainerHeader>
+       
+        
+        <S.ContainerBody>
+        
+          {cartItemsToShow.map((product: any) => (
+            <tr key={product.price}>
+              <td>
+                <Image src={product.thumbnail} width={100} height={100} alt={product.title} />
+              </td>
+              <td>{product.title.slice(0, 20)}</td>
+              <td>
+                <button onClick={() => addToCart && addToCart(product)}>+</button>
+                <p>{cartItems[product.price]}</p>
+                <button onClick={() => removeFromCart && removeFromCart(product.price)}>-</button>
+              </td>
+              <td>$ {product.price}</td>
+              <td>$ {product.price * cartItems[product.price]}</td>
+            </tr>
+          ))}
+        </S.ContainerBody>
+        
+      </table>
     </S.Container>
   );
 };

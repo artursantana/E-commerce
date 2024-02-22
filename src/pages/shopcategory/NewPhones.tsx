@@ -22,8 +22,8 @@ const ShopCategory: React.FC<Props> = ({ banner }) => {
       {data && data.length !== 0 && (
         <S.Container>
           <div className='banner'>
-            <h1>The Best New Phones on the Market</h1>
             <Image src={banner} width={300} height={300} alt="" />
+            <h1>The Best New Phones on the Market</h1>
           </div>
 
           <S.ContainerProducts>

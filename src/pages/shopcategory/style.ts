@@ -16,22 +16,27 @@ export const Container = styled.div`
 .banner{
     display: flex;
     width: 80%;
-    height: 45vh;
     background-color: ${ColorContainer};
     position: relative;
     margin: auto;
     align-items: center;
     padding: 15px;
+    @media (max-width: 700px) {
+            flex-direction: column;
+            text-align: center;
+            font-size: 5px;
+        }
+    
 
     h1{
         display: flex;
         font-size: 45px;
-        color: hotpink;
+        color: ${lettersColor};
         align-items: baseline;
+       
     }
     img{
         display: flex;
-        position: absolute;
         right: 0;
         
         
