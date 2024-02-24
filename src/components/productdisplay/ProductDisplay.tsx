@@ -22,7 +22,6 @@ const ProductDisplay = ({ product }: { product: ProductProps }) => {
 
   const context = useContext(ShopContext);
 
-  console.log(context)
   if (!context || !product) {
     return <h1>Carregando...</h1>;
   }
@@ -37,13 +36,13 @@ const ProductDisplay = ({ product }: { product: ProductProps }) => {
       
       <S.ContainerLeft>
         <S.ContainerImgList>
-          <Image src={thumbnail} width={100} height={100} alt='' />
-          <Image src={thumbnail} width={100} height={100} alt='' />
-          <Image src={thumbnail} width={100} height={100} alt='' />
-          <Image src={thumbnail} width={100} height={100} alt='' />
+          <Image src={thumbnail} width={100} height={100} priority={true} alt='' />
+          <Image src={thumbnail} width={100} height={100} priority={true} alt='' />
+          <Image src={thumbnail} width={100} height={100} priority={true} alt='' />
+          <Image src={thumbnail} width={100} height={100} priority={true}alt='' />
         </S.ContainerImgList>
         <S.ContainerImgMain widthPage={widthPage}>
-          <Image src={thumbnail} width={100} height={100} alt='' />
+          <Image src={thumbnail} width={100} height={100} priority={true} alt='' />
         <h1>{titleResume}</h1>
         </S.ContainerImgMain >
       </S.ContainerLeft>
