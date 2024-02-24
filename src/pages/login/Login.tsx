@@ -1,7 +1,7 @@
 
 
 import React from 'react'
-import * as S from './style'
+import * as S from '../../app/stylePages/login/_style'
 
 const Login = () => {
   return (

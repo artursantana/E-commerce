@@ -1,6 +1,6 @@
 
 import styled from "@emotion/styled";
-import { lettersColor,ColorContainer} from '../../pages/theme'
+import { lettersColor,ColorContainer} from '../../app/stylePages/_theme'
 
 
 export const Container = styled.div`

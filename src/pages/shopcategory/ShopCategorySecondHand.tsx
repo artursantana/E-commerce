@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import * as S from './style';
+import * as S from '../../app/stylePages/shopcategory/_style';
 import { ShopContext } from '@/context/ShopContext';
 import Image from 'next/image';
 import Item from '../../components/item/Item';
