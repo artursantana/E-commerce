@@ -13,11 +13,6 @@ const nextConfig = {
     ];
   },
 
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/shop/Shop", "dest": "/shop/Shop" }
-  ],
-  
   images: {
     domains: ['http2.mlstatic.com'],
   }
