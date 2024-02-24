@@ -1,7 +1,20 @@
 import React, { createContext, useState, useEffect, ReactNode, useContext } from "react";
 
+
 type ItemType = {
   title: string;
+  price: number;
+  order_backend: number;
+  
+  
+};
+
+type CartItem = {
+  id: string;
+  condition: string;
+  original_price: number;
+  title: string;
+  official_store_name: string;
   price: number;
   order_backend: number;
 };

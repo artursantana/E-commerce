@@ -15,11 +15,12 @@ interface ProductProps {
   original_price:number
   addToCart: (itemId: number) => void|undefined; 
   removeFromCart: (itemId: number) => void|undefined; 
-  product?: ProductProps | undefined;
 }
 
 
-const ProductDisplay = ({ product }: { product?: ProductProps }) => {
+const ProductDisplay = ({ product }: { product: ProductProps }) => {
+
+
   const context = useContext(ShopContext);
 
   if (!context || !product) {
