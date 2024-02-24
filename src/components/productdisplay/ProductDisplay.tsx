@@ -13,8 +13,7 @@ interface ProductProps {
   thumbnail: string
   price: number
   original_price:number
-  addToCart: (itemId: number) => void|undefined; 
-  removeFromCart: (itemId: number) => void|undefined; 
+  
 }
 
 
@@ -23,11 +22,12 @@ const ProductDisplay = ({ product }: { product: ProductProps }) => {
 
   const context = useContext(ShopContext);
 
+  console.log(context)
   if (!context || !product) {
     return <h1>Carregando...</h1>;
   }
   const { addToCart,widthPage } = context;
-  const { title, price, thumbnail, } = product;
+  const { id,condition,official_store_name,listing_type_id,attributes,original_price,title, price, thumbnail, } = product;
 
   const titleResume = title.slice(0,30)
 
@@ -62,7 +62,7 @@ const ProductDisplay = ({ product }: { product: ProductProps }) => {
         <p>Type : {product.listing_type_id}</p>
         <p>Brand: {typeof product.attributes[0] === 'object' ? product.attributes[0].value_name : 'N/A'}</p>
       </S.Description>
-        <button onClick={() => addToCart && addToCart({ title, price, order_backend: 0 })}>add to card</button>
+        <button onClick={() => addToCart && addToCart({ id,condition,official_store_name,listing_type_id,attributes,original_price,title, price, order_backend: 0 })}>add to card</button>
       </S.ContainerRight>
       </S.SubContainer>
     </S.Container>

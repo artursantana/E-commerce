@@ -5,19 +5,16 @@ type ItemType = {
   title: string;
   price: number;
   order_backend: number;
-  
-  
+
+  id: string
+  condition: string
+  official_store_name: string
+  listing_type_id: string
+  attributes: { value_name: string }[];
+  thumbnail: string
+  original_price:number
 };
 
-type CartItem = {
-  id: string;
-  condition: string;
-  original_price: number;
-  title: string;
-  official_store_name: string;
-  price: number;
-  order_backend: number;
-};
 
 type ShopContextType = {
   widthPage: number | undefined;
