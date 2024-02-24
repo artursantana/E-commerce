@@ -3,7 +3,7 @@ import React from 'react'
 import './global.css'
 
 
-const page = ({children}) => {
+const Page = ({children}: {children: React.ReactNode}) => {
   return (
     <div>
       {children}
@@ -11,4 +11,4 @@ const page = ({children}) => {
   )
 }
 
-export default page
+export default Page
