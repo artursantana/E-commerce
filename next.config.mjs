@@ -1,6 +1,7 @@
-@type {import('next').NextConfig}
+/** @type {import('next').NextConfig} */
 const nextConfig = {
 
+  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
 
   async redirects() {
     return [
@@ -11,11 +12,10 @@ const nextConfig = {
       },
     ];
   },
-  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
-
-    images: {
-        domains: ['http2.mlstatic.com'],
-      }
+  
+  images: {
+    domains: ['http2.mlstatic.com'],
+  }
 };
 
 export default nextConfig;
