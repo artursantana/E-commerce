@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "typescript-build": "tsc",
+    "next-build": "next build", 
     "start": "next start",
     "lint": "next lint"
   },
@@ -24,6 +25,6 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
-    "typescript": "^5"
+    "typescript": "^5.3.3"
   }
 }
