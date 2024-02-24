@@ -12,7 +12,7 @@ const nextConfig = {
       },
     ];
   },
-
+  
   images: {
     domains: ['http2.mlstatic.com'],
   }
