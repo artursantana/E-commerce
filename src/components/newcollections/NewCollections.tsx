@@ -8,6 +8,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 type ItemType = {
   title: string;
+  img: string 
   thumbnail: string;
   installments: string;
   amount: string;
@@ -54,9 +55,11 @@ const NewCollections: React.FC = () => {
       <hr />
       <div className='wrap' ref={wrap}>
         <S.ContainerColletions>
-          {itemsToShow.map((item, index) => (
-            <Item key={index} title={item.title} price={item.price} img={item.thumbnail} />
-          ))}
+        {itemsToShow
+  .filter((item) => item.thumbnail)
+  .map((item, index) => (
+    <Item key={index} price={Number(item.price)} img={item.thumbnail}  />
+  ))}
         </S.ContainerColletions>
       </div>
       <div className='buttons'>

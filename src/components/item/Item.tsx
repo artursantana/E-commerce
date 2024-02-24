@@ -1,3 +1,4 @@
+
 import * as S from './style';
 import React from 'react';
 import Image from 'next/image';
@@ -7,10 +8,11 @@ interface ItemProps {
   key: number
   img?: string | undefined;
   price: number;
-  thumbnail:string
+  title?: string | undefined;
 }
 
 const Item: React.FC<ItemProps> = ({ img, price }) => {
+
   return (
     <S.Container>
       <S.ContaineritemPrices>

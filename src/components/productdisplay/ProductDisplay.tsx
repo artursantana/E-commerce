@@ -4,6 +4,11 @@ import Image from 'next/image'
 import { ShopContext } from '@/context/ShopContext'
 
 interface Props {
+  id: string
+  condition: string
+  official_store_name: string
+  listing_type_id: string
+  attributes: { value_name: string }[];
   title: string
   thumbnail: string
   price: number
@@ -53,7 +58,7 @@ console.log(widthPage)
         <p>Condition : {product.condition}</p>
         <p>Official Store Name : {product.official_store_name}</p>
         <p>Type : {product.listing_type_id}</p>
-        <p>Brand : {product.attributes[0].value_name}</p>
+        <p>Brand: {typeof product.attributes[0] === 'object' ? product.attributes[0].value_name : 'N/A'}</p>
       </S.Description>
         <button onClick={() => addToCart && addToCart({ title, price, order_backend: 0 })}>add to card</button>
       </S.ContainerRight>

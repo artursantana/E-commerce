@@ -7,12 +7,12 @@ type ItemType = {
 };
 
 type ShopContextType = {
-  widthPage:number | undefined
+  widthPage: number | undefined;
   data: ItemType[];
   cartItems: Record<number, number>;
   addToCart: (item: ItemType) => void;
   removeFromCart: (itemId: number) => void;
-  getTotalCartItem:() => number;
+  getTotalCartItem: () => number;
 };
 
 type ShopContextProviderProps = {

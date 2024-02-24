@@ -8,14 +8,19 @@ import Logo from '../../../public/logo.png';
 import { ShopContext } from '@/context/ShopContext'
 import { usePathname } from 'next/navigation';
 
+
+
 const Navbar = () => {
   
   const pathname = usePathname()
-  const { getTotalCartItem,widthPage } = useContext(ShopContext)
-  
-  
 
- console.log(widthPage)
+  const context = useContext(ShopContext);
+
+  if (!context) {
+    return null;
+  }
+
+  const { getTotalCartItem, widthPage } = context;
 
   return (
     <>
