@@ -9,14 +9,13 @@ const Product: React.FC = () => {
   const router = useRouter();
 
   const { price } = router.query;
-  const parsedPrice = Array.isArray(price) ? price[0] : price;
-  const product = data.find((e) => e.price === parseFloat(parsedPrice));
+  const parsedPrice = typeof price === 'string' ? parseFloat(price) : undefined;
+  const product = parsedPrice !== undefined ? data.find((e) => e.price === parsedPrice) : undefined;
 
   return (
     <S.Container>
       <div>
-
-        <ProductDisplay product={product} />
+        {product && <ProductDisplay product={product} />}
       </div>
     </S.Container>
   );

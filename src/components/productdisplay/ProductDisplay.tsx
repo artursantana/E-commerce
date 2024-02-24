@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import Image from 'next/image'
 import { ShopContext } from '@/context/ShopContext'
 
-interface Props {
+interface ProductProps {
   id: string
   condition: string
   official_store_name: string
@@ -15,9 +15,11 @@ interface Props {
   original_price:number
   addToCart: (itemId: number) => void|undefined; 
   removeFromCart: (itemId: number) => void|undefined; 
+  product?: ProductProps | undefined;
 }
 
-const ProductDisplay = ({ product }: { product?: Props }) => {
+
+const ProductDisplay = ({ product }: { product?: ProductProps }) => {
   const context = useContext(ShopContext);
 
   if (!context || !product) {
@@ -26,9 +28,8 @@ const ProductDisplay = ({ product }: { product?: Props }) => {
   const { addToCart,widthPage } = context;
   const { title, price, thumbnail, } = product;
 
-
   const titleResume = title.slice(0,30)
-console.log(widthPage)
+
   return (
     <S.Container>
       <S.SubContainer widthPage={widthPage}>
