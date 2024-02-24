@@ -62,7 +62,7 @@ const ProductDisplay = ({ product }: { product: ProductProps }) => {
         <p>Type : {product.listing_type_id}</p>
         <p>Brand: {typeof product.attributes[0] === 'object' ? product.attributes[0].value_name : 'N/A'}</p>
       </S.Description>
-        <button onClick={() => addToCart && addToCart({ id,condition,official_store_name,listing_type_id,attributes,original_price,title, price, order_backend: 0 })}>add to card</button>
+        <button onClick={() => addToCart && addToCart({ id,condition,official_store_name,listing_type_id,attributes,original_price,title, price,thumbnail, order_backend: 0 })}>add to card</button>
       </S.ContainerRight>
       </S.SubContainer>
     </S.Container>
