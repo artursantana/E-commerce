@@ -2,7 +2,7 @@
 
 import CartItems from '../../components/cartitems/CartItems'
 import React from 'react'
-import * as S from './style'
+import * as S from './_style'
 
 const Cart = () => {
   return (
