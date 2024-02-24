@@ -3,7 +3,7 @@ import React from 'react'
 import './global.css'
 
 
-const Page = ({children}: {children: React.ReactNode}) => {
+const Page = ({children}: any) => {
   return (
     <div>
       {children}
