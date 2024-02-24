@@ -9,6 +9,7 @@ const nextConfig = {
         source: '/',
         destination: '/shop/Shop',
         permanent: true,
+        minify: false,
       },
     ];
   },
