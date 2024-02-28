@@ -2,7 +2,7 @@
 import { ShopContext } from '@/context/ShopContext';
 import { useContext } from 'react';
 import * as S from '../../app/stylePages/product/_style';
-import ProductDisplay from '@/pages/productdisplay/ProductDisplay';
+import ProductDisplay from '@/components/productdisplay/ProductDisplay';
 import { useRouter } from 'next/router';
 
 
