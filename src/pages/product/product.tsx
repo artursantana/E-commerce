@@ -14,7 +14,9 @@ const Product: React.FC = () => {
   const parsedPrice = typeof price === 'string' ? parseFloat(price) : undefined;
   const product = parsedPrice !== undefined ? data.find((e) => e.price === parsedPrice) : undefined;
 
+  console.log(product)
   return (
+    
     <S.Container>
       <div>
       {product ? (<ProductDisplay product={product}/>) : (<p>Product not found</p>)}
