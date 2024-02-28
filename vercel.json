@@ -1,0 +1,10 @@
+{
+    "routes": {
+      "/product/Product/[price]": {
+        "src": "/product/Product/([\\d]+)",
+        "dest": "/product/Product/$1"
+      }
+    }
+  }
+
+  
