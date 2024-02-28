@@ -14,7 +14,7 @@ const Product: React.FC = () => {
   const parsedPrice = typeof price === 'string' ? parseFloat(price) : undefined;
   const product = parsedPrice !== undefined ? data.find((e) => e.price === parsedPrice) : undefined;
 
-  console.log(product ? `tudo certo ${product}` : `nao deu certo ${product}`)
+  console.log(product == undefined ? `tudo certo ${product}` : `nao deu certo ${product}`)
   return (
     
     <S.Container>
