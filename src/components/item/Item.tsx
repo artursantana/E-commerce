@@ -17,7 +17,7 @@ const Item: React.FC<ItemProps> = ({ img, price }) => {
     <S.Container>
       <S.ContaineritemPrices>
         {img && (
-          <Link href={{ pathname:'/product/Product', query:{price}}}>
+          <Link href={{ pathname:'/product/Product'}}>
             <Image src={img} width={100} height={100} alt={`Product image - ${price}`}/>
           </Link>
         )}
