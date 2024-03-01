@@ -22,7 +22,7 @@ const Item: React.FC<ItemProps> = ({ img, price }) => {
       </Link>
         )}
         <S.ContainerNewPrice>R$ {price}</S.ContainerNewPrice>
-        <S.ContainerPriceOld>valor em dolar</S.ContainerPriceOld>
+        <S.ContainerPriceOld>dolar</S.ContainerPriceOld>
       </S.ContaineritemPrices>
     </S.Container>
   );
