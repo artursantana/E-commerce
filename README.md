@@ -19,7 +19,7 @@
 
 npm run dev
 
-O aplicativo estará disponível em http://localhost:3000/.
+O aplicativo estará disponível em http://localhost:3000/
 
 
 ## Estrutura do Projeto
