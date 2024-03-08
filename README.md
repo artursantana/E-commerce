@@ -28,6 +28,7 @@ O aplicativo estará disponível em http://localhost:3000/
 pages/: Contém os componentes que correspondem às páginas do aplicativo.
 components/: Agrupa os componentes reutilizáveis.
 styles/: Pode conter arquivos relacionados à estilização global.
+
 Estilização com Emotion.js
 Exemplo básico de estilização com Emotion.js:
 
@@ -38,6 +39,5 @@ import styled from '@emotion/styled';
 
 export const StyledComponent = styled.div`
   color: #333;
-  padding: 16px;
   background-color: #f0f0f0;
 `;
