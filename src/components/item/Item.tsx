@@ -16,7 +16,7 @@ const Item: React.FC<ItemProps> = ({ img, price }) => {
   const handleClick = () => {
     router.push({
       pathname: '/product/Product',
-      query: { price },
+      query: { price, img },
     });
   };
 
