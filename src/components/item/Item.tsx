@@ -4,10 +4,9 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 interface ItemProps {
-  key: number;
   img?: string | undefined;
   price: number;
-  title?: string | undefined;
+  
 }
 
 const Item: React.FC<ItemProps> = ({ img, price }) => {
@@ -16,12 +15,11 @@ const Item: React.FC<ItemProps> = ({ img, price }) => {
   const handleClick = () => {
     router.push({
       pathname: '/product/Product',
-      query: { price },
+      query: { price, img },
     });
   };
 
   return (
-    <div>
     <S.Container>
       <S.ContaineritemPrices>
         {img && (
@@ -33,7 +31,6 @@ const Item: React.FC<ItemProps> = ({ img, price }) => {
         <S.ContainerPriceOld>dolar</S.ContainerPriceOld>
       </S.ContaineritemPrices>
     </S.Container>
-    </div>
   );
 };
 
