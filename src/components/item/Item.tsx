@@ -21,6 +21,7 @@ const Item: React.FC<ItemProps> = ({ img, price }) => {
   };
 
   return (
+    <div>
     <S.Container>
       <S.ContaineritemPrices>
         {img && (
@@ -32,6 +33,7 @@ const Item: React.FC<ItemProps> = ({ img, price }) => {
         <S.ContainerPriceOld>dolar</S.ContainerPriceOld>
       </S.ContaineritemPrices>
     </S.Container>
+    </div>
   );
 };
 
