@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 interface ItemProps {
   img?: string | undefined;
   price: number;
-  
+  title?: string | undefined;
 }
 
 const Item: React.FC<ItemProps> = ({ img, price }) => {
