@@ -29,6 +29,9 @@ export const ContaineritemPrices = styled.div`
 display: flex;
 flex-direction: column;
 
+div{
+    cursor: pointer;
+}
 
 `
 
