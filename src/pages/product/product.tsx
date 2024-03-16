@@ -19,7 +19,6 @@ const Product: React.FC = () => {
     <S.Container>
       <div>
       {product ? (<ProductDisplay product={product}/>) : (<p>Product not found</p>)}
-      
       </div>
     </S.Container>
   );
