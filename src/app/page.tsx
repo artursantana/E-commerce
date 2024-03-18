@@ -5,9 +5,9 @@ import './global.css'
 
 const Page = ({children}: any) => {
   return (
-    <div>
+    <>
       {children}
-    </div>
+    </>
   )
 }
 

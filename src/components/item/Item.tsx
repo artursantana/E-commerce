@@ -1,7 +1,10 @@
-import { useCallback } from 'react';
+
+
+import React from 'react';
 import * as S from './style';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+const { useCallback } = React;
 
 interface ItemProps {
   img?: string | undefined;
@@ -14,10 +17,10 @@ const Item: React.FC<ItemProps> = ({ img, price }) => {
 
   const handleClick = useCallback(() => {
     router.push({
-      pathname: '/product/Product',
+      pathname: `/product/product`,
       query: { price, img },
     });
-  }, [router, price, img]);
+  }, [router, price, img ]);
 
   return (
     <S.Container>
