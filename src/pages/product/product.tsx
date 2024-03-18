@@ -1,5 +1,5 @@
-// Em Product.tsx
-import { ShopContext } from '@/context/ShopContext';
+
+import { ShopContext } from '../../context/ShopContext';
 import { useContext } from 'react';
 import * as S from '../../app/stylePages/product/_style';
 import ProductDisplay from '@/components/productdisplay/ProductDisplay';
