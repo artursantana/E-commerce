@@ -27,27 +27,21 @@ export const Container = styled.div`
             font-size: 5px;
         }
     
-
     h1{
         display: flex;
         font-size: 45px;
         color: ${lettersColor};
         align-items: baseline;
-       
     }
     img{
         display: flex;
-        right: 0;
-        
-        
-        
+        right: 0;    
     }
 }
 
-
 `
 
-export const ContainerProducts = styled.div`
+export const ContainerFilterProducts = styled.div`
 
 
 .itens{
@@ -58,6 +52,29 @@ export const ContainerProducts = styled.div`
     justify-content: center;
     
 }
+`
 
+export const ConatinerSearch = styled.div`
+    display: flex;
+    padding: 25px 0px 0px 0px ;
+    gap: 25px;
+    width: 82%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 
+input{
+    width: 350px;
+    font-size: 25px;
+}
+
+button{
+    padding: 5px;
+    border-radius: 75px;
+    background-color: #121212;
+    font-weight: 550;
+    text-decoration: none;
+    color: #FFF;
+
+}
 `

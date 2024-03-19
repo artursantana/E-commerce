@@ -10,11 +10,7 @@ const Product: React.FC = () => {
   const { data } = useContext(ShopContext)!;
   
   const router = useRouter();
-
   const { price } = router.query;
-  console.log('data:',data,)
-  console.log('price:',price)
-
   const parsedPrice = typeof price === 'string' ? parseFloat(price) : undefined;
   const product = parsedPrice !== undefined ? data.find((e) => e.price === parsedPrice) : undefined;
 
