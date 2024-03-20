@@ -39,7 +39,7 @@ const [filteredData, setFilteredData] = useState(data);
       </div>
 
       <S.ConatinerSearch>
-        🌐<input type="text" onChange={handleChange} placeholder='example: xiaomi poco' /> <button onClick={handleClick}>Search</button>
+        🌐<input type="text" onChange={handleChange} placeholder='example: xiaomi' /> <button onClick={handleClick}>Search</button>
           </S.ConatinerSearch>
       
       <S.ContainerFilterProducts>
