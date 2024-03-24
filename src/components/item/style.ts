@@ -35,19 +35,21 @@ div{
 
 `
 
-export const ContainerNewPrice = styled.div`
 
-color: ${ColorContainer};
-font-size: 18px;
-font-weight: 600;
-
-`
-
-export const ContainerPriceOld = styled.div`
+export const ContainerPrice = styled.div`
 
 color: ${ColorContainer};
 font-size: 18px;
 font-weight: 500;
-text-decoration: line-through;
+
+.spanusd{
+    color: green;
+}
+.spaneur{
+    color: blue;
+}
+.spanbrl{
+    color: tomato;
+}
 
 `
