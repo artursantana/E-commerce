@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import * as S from './style';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
-import Men from '../../../public/men.png';
-import Women from '../../../public/women.png';
-import Logo from '../../../public/logo.png';
+import Men from '../../../public/men.svg';
+import Women from '../../../public/women.svg';
+import Logo from '../../../public/logo.svg';
 import { ShopContext } from '@/context/ShopContext'
 import { usePathname } from 'next/navigation';
 

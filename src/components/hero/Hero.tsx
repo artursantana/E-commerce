@@ -3,7 +3,7 @@
 import React from 'react'
 import * as S from './style'
 import Image from 'next/image'
-import LogoMain from '../../../public/sale.png'
+import LogoMain from '../../../public/sale.svg'
 import Link from 'next/link'
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
                 <h2><span>Cell Phones</span> Near You Always</h2>
                
                 <div className='heroLatest'>
-            <Link href='/shopcategory/ShopCategorySecondHand?banner=%2F_next%2Fstatic%2Fmedia%2Fwomen.64447bfb.png'>
+            <Link href='/shopcategory/ShopCategorySecondHand?banner=%2F_next%2Fstatic%2Fmedia%2Fwomen.47ee1840.svg'>
               Second Hand
             </Link>
            
