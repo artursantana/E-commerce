@@ -5,7 +5,8 @@ import { useRouter } from 'next/router';
 
 interface ItemProps {
   img?: string | undefined;
-  price: number; // preço em Real Brasileiro (BRL)
+  title?: string
+  price: number; 
 }
 
 const Item: React.FC<ItemProps> = ({ img, price }) => {

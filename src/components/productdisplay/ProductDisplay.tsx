@@ -1,5 +1,5 @@
 import * as S from './style'
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Image from 'next/image'
 import { ShopContext } from '@/context/ShopContext'
 
@@ -19,7 +19,6 @@ interface ProductProps {
 
 const ProductDisplay = ({ product }: { product: ProductProps }) => {
 
-
   const context = useContext(ShopContext);
 
   if (!context || !product) {
@@ -29,6 +28,7 @@ const ProductDisplay = ({ product }: { product: ProductProps }) => {
   const { id,condition,official_store_name,listing_type_id,attributes,original_price,title, price, thumbnail, } = product;
 
   const titleResume = title.slice(0,30)
+  
 
   return (
     <S.Container>

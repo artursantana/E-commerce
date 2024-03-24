@@ -57,6 +57,7 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
   }, []);
 
   
+  
 
   const getTotalCartItem = () => {
     let totalitem = 0
@@ -109,7 +110,7 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
 
   }, []);
 
-  const contextValue: ShopContextType = { widthPage,getTotalCartItem, data, cartItems, addToCart, removeFromCart };
+  const contextValue: ShopContextType = { widthPage, getTotalCartItem, data, cartItems, addToCart, removeFromCart };
 
   return <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>;
 };
